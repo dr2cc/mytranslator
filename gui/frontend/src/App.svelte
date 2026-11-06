@@ -1,21 +1,38 @@
 <script>
   import logo from './assets/images/logo-universal.png'
-  import {Greet} from '../wailsjs/go/main/App.js'
+  import {Omg} from '../wailsjs/go/main/App.js' // 1. Добавил Omg в импорт
 
-  let resultText = "Please enter your name below 👇"
-  let name
+  // let resultText = "Please enter your name below 👇"
+  // let name
 
-  function greet() {
-    Greet(name).then(result => resultText = result)
+  // function greet() {
+  //   Greet(name).then(result => resultText = result)
+  // }
+
+  // 2. Новые переменные и функция для Omg
+  let omgResultText = "OMG!! Please! Please!! Enter star name below 👇"
+  let star
+
+  function omg() {
+    Omg(star).then(result => omgResultText = result)
   }
 </script>
 
 <main>
   <img alt="Wails logo" id="logo" src="{logo}">
-  <div class="result" id="result">{resultText}</div>
+
+  <!-- Блок по умолчанию -->
+  <!-- <div class="result" id="result">{resultText}</div>
   <div class="input-box" id="input">
     <input autocomplete="off" bind:value={name} class="input" id="name" type="text"/>
     <button class="btn" on:click={greet}>Greet</button>
+  </div> -->
+
+  <!--3. Блок OMG -->
+  <div class="result" id="omg-result">{omgResultText}</div>
+  <div class="input-box" id="omg-input">
+    <input autocomplete="off" bind:value={star} class="input" id="star" type="text"/>
+    <button class="btn" on:click={omg}>OMG</button>
   </div>
 </main>
 

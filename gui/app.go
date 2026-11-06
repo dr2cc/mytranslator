@@ -23,7 +23,13 @@ func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
 
-// Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+// // Greet returns a greeting for the given name
+// func (a *App) Greet(name string) string {
+// 	return fmt.Sprintf("Hello %s, It's show time!", name)
+// }
+
+func (a *App) Omg(star string) string {
+	// // Translate это метод Service struct{}, к нему нужно обращаться как к методу!
+	// result, _ := translate.Translate(star, "en")
+	return fmt.Sprintf("OMG! It's you, %s!", star)
 }
