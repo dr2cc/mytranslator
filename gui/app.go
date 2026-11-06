@@ -17,6 +17,8 @@ func NewApp() *App {
 
 // startup is called when the app starts. The context is saved
 // so we can call the runtime methods
+// Метод startup вызывается при запуске приложения. Контекст сохраняется,
+// чтобы можно было вызывать методы среды выполнения (runtime).
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
