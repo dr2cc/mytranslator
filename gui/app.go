@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+
+	"github.com/dr2cc/mytranslator/internal/translate"
 )
 
 // App struct
@@ -29,7 +31,11 @@ func (a *App) startup(ctx context.Context) {
 // }
 
 func (a *App) Omg(star string) string {
-	// // Translate это метод Service struct{}, к нему нужно обращаться как к методу!
-	// result, _ := translate.Translate(star, "en")
-	return fmt.Sprintf("OMG! It's you, %s!", star)
+	// Создаем экземпляр Service. Не используем DI (плохо!?)
+	//❗Как правильно использовать DI в такой связке?
+	translateService := translate.NewService()
+	// Обращаемся к Translate (методу Service struct{})
+	result, _ := translateService.Translate(star, "ru")
+	//❗Не обрабатываем ошибку. Это плохо! Или нет? Уточнить!!
+	return fmt.Sprintf("OMG! It's you, %s!", result)
 }

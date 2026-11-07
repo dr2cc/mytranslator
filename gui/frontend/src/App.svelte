@@ -1,6 +1,6 @@
 <script>
-  import logo from './assets/images/logo-universal.png'
-  import {Omg} from '../wailsjs/go/main/App.js' // 1. Добавил Omg в импорт
+  import logo from "./assets/images/logo-universal.png";
+  import { Omg } from "../wailsjs/go/main/App.js"; // 1. Добавил Omg в импорт и удаляю из него Greet
 
   // let resultText = "Please enter your name below 👇"
   // let name
@@ -10,16 +10,16 @@
   // }
 
   // 2. Новые переменные и функция для Omg
-  let omgResultText = "OMG!! Please! Please!! Enter star name below 👇"
-  let star
+  let omgResultText = "OMG!! Please! Please!! Enter star name below 👇";
+  let star;
 
   function omg() {
-    Omg(star).then(result => omgResultText = result)
+    Omg(star).then((result) => (omgResultText = result));
   }
 </script>
 
 <main>
-  <img alt="Wails logo" id="logo" src="{logo}">
+  <img alt="Wails logo" id="logo" src={logo} />
 
   <!-- Блок по умолчанию -->
   <!-- <div class="result" id="result">{resultText}</div>
@@ -31,13 +31,18 @@
   <!--3. Блок OMG -->
   <div class="result" id="omg-result">{omgResultText}</div>
   <div class="input-box" id="omg-input">
-    <input autocomplete="off" bind:value={star} class="input" id="star" type="text"/>
+    <input
+      autocomplete="off"
+      bind:value={star}
+      class="input"
+      id="star"
+      type="text"
+    />
     <button class="btn" on:click={omg}>OMG</button>
   </div>
 </main>
 
 <style>
-
   #logo {
     display: block;
     width: 50%;
@@ -92,5 +97,4 @@
     border: none;
     background-color: rgba(255, 255, 255, 1);
   }
-
 </style>

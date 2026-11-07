@@ -5,8 +5,15 @@ go 1.26.1
 require github.com/wailsapp/wails/v2 v2.17.1
 
 require (
+	github.com/bregydoc/gtranslate v0.0.0-20200913051839-1bd07f6c1fc5 // indirect
+	github.com/robertkrimen/otto v0.5.1 // indirect
+	gopkg.in/sourcemap.v1 v1.0.5 // indirect
+)
+
+require (
 	git.sr.ht/~jackmordaunt/go-toast/v2 v2.0.3 // indirect
 	github.com/bep/debounce v1.2.1 // indirect
+	github.com/dr2cc/mytranslator v0.0.0-20261106140222-ca1cd326d044
 	github.com/gabriel-vasile/mimetype v1.4.16 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/godbus/dbus/v5 v5.1.0 // indirect
